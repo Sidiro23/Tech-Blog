@@ -16,6 +16,8 @@
   * [How to Contribute](#how-to-contribute)
   * [Tests](#tests)
   * [Questions?](#questions)
+  * [Resources](#resources)
+  * [Screenshot](#screenshot)
   ## License
   Read more about MIT here:
   [MIT](https://opensource.org/licenses/MIT)
@@ -41,6 +43,6 @@
   ### bcrypt
   ### sequelize
   
-  ##Screenshot
+  ## Screenshot
   
   
