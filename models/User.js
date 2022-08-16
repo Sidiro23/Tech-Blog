@@ -2,40 +2,40 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
-// create our User model
+// create  User model
 class User extends Model {
-    // set up method to run on instance data (per user) to check password 
+    //  check password 
     checkPassword(loginPW) {
         return bcrypt.compareSync(loginPW, this.password);
     }
 }
 
-// define table columns and configuration
+// define table columns 
 User.init(
   {
-    // define an id column
+    // define  id 
     id: {
-        // use the special Sequelize DataTypes object provide what type of data it is 
+        
         type: DataTypes.INTEGER,
-        // equivalent of SQL "NOT NULL"
+        
         allowNull: false,
-        // instruct that this is the Primary Key
+        
         primaryKey: true,
-        // turn on auto increment
+        
         autoIncrement: true
     },
-    // define a username column
+    // define  username 
     username: {
         type: DataTypes.STRING,
         allowNull:false,
         unique: true
     },
-    // define a password column 
+    // define  password 
     password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            // this means the password must be at least four characters long
+            // length for password
             len: [4]
         }
     }
