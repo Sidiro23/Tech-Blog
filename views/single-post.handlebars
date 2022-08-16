@@ -1,52 +1,40 @@
-<div class="post">
-  <article class="card">
-    <div class="card-header flex-row justify-space-between">
-      <h2>{{post.title}}</h2>
-      <div>
-        Posted by {{post.User.username}} on {{format_date post.createdAt}}
-      </div>
-    </div>
-    <div class="card-body">
-      {{post.body}}
-    </div>
-  </article>
+<!DOCTYPE html>
+<html lang="en">
 
-  {{#if post.Comments}}
-    <section class="card">
-      <div class="card-header">
-        <h3>Comments</h3>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVC Tech Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
-      <div class="card-body">
-        {{#each post.Comments}}
+<body>
+  <div class="wrapper">
+      <header class="hero">
           <div>
-            <p>
-              {{body}}
-            </p>
-            <p>
-              &mdash; {{User.username}}, {{format_date createdAt}}
-            </p>
+            <nav class"nav">
+                    <a class="link" href="/">Home</a>
+                    <a class="link" href="/dashboard">Dashboard</a>
+                    {{#if loggedIn}}
+                    <a class="link" href="/" id="logout">Logout</a>
+                    {{else}}
+                    <a class="link" href="/login">Login</a>
+                    {{/if}}
+                </nav>          
           </div>
-        {{/each}}
-      </div>
-    </section>
-  {{/if}}
 
-  <form id="new-comment-form" class="card">
-    <div class="card-header">
-      <h3>Add New Comment</h3>
-    </div>
+          <h1 class="app-title"><i class="fab "></i>The Tech Blog</h1>
+      </header>
 
-    <div class="card-body">
-      <input type="hidden" name="post-id" value="{{post.id}}" />
+    <main>
+      {{{ body }}}
+    </main>
+  </div>
 
-      <label class="form-label" for="comment-body">Comment</label>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 
-      <textarea name="comment-body" class="form-input"></textarea>
+</body>
 
-      <button type="submit" class="btn">Submit</button>
-    </div>
-  </form>
-</div>
-
-<script src="/javascript/comment.js"></script>
+</html>
