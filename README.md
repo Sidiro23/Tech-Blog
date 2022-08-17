@@ -3,7 +3,7 @@
 
 
 
-## Link to Video Walkthrough:
+## Link to deployed URL:
 
 
   ## Badges
