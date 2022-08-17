@@ -5,6 +5,8 @@
 
 ## Link to deployed URL:
 
+https://techblog212121.herokuapp.com/
+
 
   ## Badges
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
